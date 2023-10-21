@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Review</title>
+    <link rel="stylesheet" href="static/community_review.css">
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+      <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body><div id="bg"></div> 
+    <div class="top">
+    <center><b> COMMUNITY REVIEW </b></center>
+    
+    <hr color="black" size="5">
+   <div class="links">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/doctorsih1.html">JOBS FOR TODAY</a>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font c><a href="/community_review.html">COMMUNITY REVIEW</a></font>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./3Our Clients.html">YOUR PROFILE</a>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./4About Us.html">LOG OUT</a>
+    
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="/doctorsih1.html">HOME</a>
+   </div>
+    
+    <hr color="black" size="5">
+    </div>
+    <nav class="navbar">
+        <div class="navbar_gendoc">
+            <form id="patient-form">
+                <div class="form-group">
+                    <h1>GENERAL DOC DAIGNOSIS</h1>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Appointment Time:</label>
+                    <input type="datetime-local" id="appointment-time" name="appointment-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="symptoms">Symptoms:</label>
+                    <textarea id="symptoms" name="symptoms" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="prescription">Prescription:</label>
+                    <textarea id="prescription" name="prescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lab-tests">Laboratory Tests:</label>
+                    <textarea id="lab-tests" name="lab-tests"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Case forwarded to">Case forwarded to:</label>
+                    <textarea id="Case forwarded to" name="Case forwarded to" ></textarea>
+                </div>
+        </div>
+        <div class="navbar_maindoc">
+            <form id="patient-form">
+                <div class="form-group">
+                    <h1>MAIN DOC DAIGNOSIS</h1>
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="appointment-time">Appointment Time:</label>
+                    <input type="datetime-local" id="appointment-time" name="appointment-time" required>
+                </div>
+                <div class="form-group">
+                    <label for="symptoms">Symptoms:</label>
+                    <textarea id="symptoms" name="symptoms" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="prescription">Prescription:</label>
+                    <textarea id="prescription" name="prescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="lab-tests">Laboratory Tests:</label>
+                    <textarea id="lab-tests" name="lab-tests"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="Case forwarded to">Case forwarded to(if applicable):</label>
+                    <textarea id="Case forwarded to" name="Case forwarded to" ></textarea>
+                </div>
+    </nav>
+    <div id="respond">
+      
+        <form action="post_comment.php" method="post" id="commentform">
+      
+          <label for="comment" class="required">Your message</label>
+          <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+      
+        </form>
+        <div class="bg"></div>
+    <div class="wrapper">
+      <p id="message">Rate Your Experience</p>
+      <div class="container">
+        <div class="star-container inactive">
+          <i class="fa-regular fa-star"></i>
+          <span class="number">1</span>
+        </div>
+        <div class="star-container inactive">
+          <i class="fa-regular fa-star"></i>
+          <span class="number">2</span>
+        </div>
+        <div class="star-container inactive">
+          <i class="fa-regular fa-star"></i>
+          <span class="number">3</span>
+        </div>
+        <div class="star-container inactive">
+          <i class="fa-regular fa-star"></i>
+          <span class="number">4</span>
+        </div>
+        <div class="star-container inactive">
+          <i class="fa-regular fa-star"></i>
+          <span class="number">5</span>
+        </div>
+      </div>
+      <button id="submit" disabled>Submit</button>
+      <div id="submit-section" class="hide">
+        <p id="submit-message">Thanks for your feedback</p>
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="static/community_review.js"></script>
+      
+      </div>
+</body>
+</html>

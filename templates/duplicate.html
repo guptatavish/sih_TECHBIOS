@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <link rel="stylesheet" href="static/duplicatestyle1.css">
+    <!--Google Fonts and Icons-->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Round|Material+Icons+Sharp|Material+Icons+Two+Tone"
+      rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="image"></div>
+    <div class="center">
+      <form action="">
+        <div class="title">Login</div>
+        <span class="inputs">
+          <span class="inputf">
+            <input type="email" class="input" placeholder="email" id="email" />
+            <span class="label">Email</span>
+            <span class="material-icons icon">email</span>
+          </span>
+          <span class="inputf">
+            <input type="password" class="input" placeholder="password" id="password" />
+            <span class="label">Password</span>
+            <span class="material-icons icon">lock</span>
+          </span>
+        </span>
+        <div class="links">
+          <a href="#">Forgot Password</a>
+          <label for="remember">
+            <input type="checkbox" id="remember" />
+            Remember Me
+          </label>
+        </div>
+        <input type="button" value="Login" class="btn" onclick="login()">
+          <div class="dots">
+            <div class="dot" style="--delay: 0s"></div>
+            <div class="dot" style="--delay: 0.25s"></div>
+            <div class="dot" style="--delay: 0.5s"></div>
+          </div>
+        </button>
+        <div class="text">
+          New user? Create an account <a href="#">Register</a>
+        </div>
+      </form>
+    </div>
+      <script>
+        
+      function login() {
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+        if (email== "28" && password == "123chaman") 
+        {
+          window.location.assign("page2.html");
+          alert("Login successful!");
+        } else if (email === "46" && password === "doc68") {
+          window.location.assign("doctorsih1.html");
+          alert("Login successful!");
+        } else if(email=="47" && password=="doc69"){
+          window.location.assign("docavailable.html")
+        } 
+        else {
+          alert("The password or username you entered is incorrect. Please enter the correct information.");
+          return false;
+        }
+      }
+
+      </script>
+      
+  </body>
+</html>
