@@ -40,37 +40,41 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="/doctorsih1.html">HOME</a>
    </div>
-    
     <hr color="black" size="5">
     </div>
+    <div>
+      {% for row in data %}
     <nav class="navbar">
         <div class="navbar_gendoc">
+         
             <form id="patient-form">
                 <div class="form-group">
                     <h1>GENERAL DOC DAIGNOSIS</h1>
+                    
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    {{row[6]}}
                 </div>
                 <div class="form-group">
                     <label for="appointment-time">Appointment Time:</label>
-                    <input type="datetime-local" id="appointment-time" name="appointment-time" required>
+                    {{row[1]}}
                 </div>
                 <div class="form-group">
                     <label for="symptoms">Symptoms:</label>
-                    <textarea id="symptoms" name="symptoms" required></textarea>
+                    {{row[2]}}
                 </div>
                 <div class="form-group">
                     <label for="prescription">Prescription:</label>
-                    <textarea id="prescription" name="prescription" required></textarea>
+                    {{row[3]}}
                 </div>
                 <div class="form-group">
                     <label for="lab-tests">Laboratory Tests:</label>
-                    <textarea id="lab-tests" name="lab-tests"></textarea>
+                    {{row[4]}}
                 </div>
                 <div class="form-group">
                     <label for="Case forwarded to">Case forwarded to:</label>
-                    <textarea id="Case forwarded to" name="Case forwarded to" ></textarea>
+                    {{row[5]}}
                 </div>
+          
         </div>
         <div class="navbar_maindoc">
             <form id="patient-form">
@@ -100,6 +104,8 @@
                     <textarea id="Case forwarded to" name="Case forwarded to" ></textarea>
                 </div>
     </nav>
+    {% endfor %}
+    </div>
     <div id="respond">
       
         <form action="post_comment.php" method="post" id="commentform">
@@ -110,7 +116,7 @@
         </form>
         <div class="bg"></div>
     <div class="wrapper">
-      <p id="message">Rate Your Experience</p>
+      <p id="message">Rate The Diagnosis given by General Doctor</p>
       <div class="container">
         <div class="star-container inactive">
           <i class="fa-regular fa-star"></i>
@@ -141,6 +147,6 @@
     <!-- Script -->
     <script src="static/community_review.js"></script>
       
-      </div>
+    </div>
 </body>
 </html>

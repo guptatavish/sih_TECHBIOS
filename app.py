@@ -1,12 +1,18 @@
 
 from flask import Flask, jsonify,render_template
-from flask_pymongo import PyMongo
+import pymysql
+pymysql.version_info=(1,4,6,'final',0)
+pymysql.install_as_MySQLdb()
 
 app = Flask(__name__)
 
-# Replace the connection string with your own MongoDB connection string
-app.config['MONGO_URI'] = 'mongodb+srv://tavish:<UU30dQ1ZKzaOCWg0>@cluster0.ro3hdk0.mongodb.net/'
-mongo = PyMongo(app)
+host = 'localhost'
+user = 'root'
+password = 'tavish99'
+database = 'sih'
+connection = pymysql.connect(host=host, user=user, password=password, database=database)
+cursor = connection.cursor()
+
 
 
 
@@ -28,7 +34,10 @@ def register2():
 
 @app.route('/community_review.html')
 def register3():
-    return render_template("community_review.html")
+    sql="SELECT * FROM doc"
+    cursor.execute(sql)
+    data=cursor.fetchall()
+    return render_template("community_review.html",data=data)
 
 @app.route('/job_for_today.html')
 def xyz():
@@ -46,4 +55,4 @@ def xyz2():
 def xyz3():
     return render_template("docavailable.html")
 if __name__ == '__main__':  
-    app.run(debug=True)
+    app.run(debug=True,port=8000)
