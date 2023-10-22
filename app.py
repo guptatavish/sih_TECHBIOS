@@ -43,7 +43,17 @@ def register3():
 
 @app.route('/job_for_today.html')
 def xyz():
-    return render_template("jobs_for_today.html")
+    sql="SELECT * FROM jobs ORDER BY timing"
+    cursor.execute(sql)
+    data=cursor.fetchall()
+    return render_template("jobs_for_today.html",data=data)
+
+@app.route('/15677.html')
+def zyz():
+    sql="SELECT * from patient"
+    cursor.execute(sql)
+    data=cursor.fetchall()
+    return render_template("15677.html",data=data) 
 
 @app.route('/patient_records.html')
 def xyz1():

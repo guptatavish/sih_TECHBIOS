@@ -55,38 +55,19 @@
         <th>Details</th>
       </tr>
     </thead>
+    {% for row in data %}
     <tbody>
+      
       <tr>
-        <td>John Doe</td>
-        <td><a href="url">123456789</a></td>
-        <td>8:00 AM - 9:00 AM</td>
-        <td><a href="/patient_records.html">view</a></td>
+        <td>{{row[0]}}</td>
+        <td><a href="/15677.html">{{row[1]}}</a></td>
+        <td>{{row[2]}}</td>
+        <td><a href="/patient_records.html">Start</a></td>
       </tr>
-      <tr>
-        <td>Jane Smith</td>
-        <td><a href="url">084658297</a></td>
-        <td>10:00 AM - 11:00 AM</td>
-        <td><a href="/patient_records.html">view</a></td>
-      </tr>
-      <tr>
-        <td>Michael Johnson</td>
-        <td><a href="url">285638590</a></td>
-        <td>11:00 AM - 12:00 PM</td>
-        <td><a href="/patient_records.html">view</a></td>
-      </tr>
-      <tr>
-        <td>xyz abc</td>
-        <td><a href="url">839485765</a></td>
-        <td>1:00 PM - 2:00 PM</td>
-        <td><a href="/patient_records.html">view</a></td>
-      </tr>
-      <tr>
-        <td>David Wilson</td>
-        <td><a href="url">123659748</a></td>
-        <td>2:00 PM - 3:00 PM</td>
-        <td><a href="/patient_records.html">view</a></td>
-      </tr>
+      
+      
     </tbody>
+    {% endfor %}
   </table>
   
 </body>
