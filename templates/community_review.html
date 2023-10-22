@@ -22,7 +22,7 @@
     <hr color="black" size="5">
    <div class="links">
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="/doctorsih1.html">JOBS FOR TODAY</a>
+    <a href="/job_for_today.html">JOBS FOR TODAY</a>
     
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,75 +43,80 @@
     <hr color="black" size="5">
     </div>
     <div>
-      {% for row in data %}
+    {% for row in data %}
     <nav class="navbar">
-        <div class="navbar_gendoc">
+      <div class="navbar_gendoc">
          
-            <form id="patient-form">
-                <div class="form-group">
-                    <h1>GENERAL DOC DAIGNOSIS</h1>
-                    
-                    <label for="name">Name:</label>
-                    {{row[6]}}
-                </div>
-                <div class="form-group">
-                    <label for="appointment-time">Appointment Time:</label>
-                    {{row[1]}}
-                </div>
-                <div class="form-group">
-                    <label for="symptoms">Symptoms:</label>
-                    {{row[2]}}
-                </div>
-                <div class="form-group">
-                    <label for="prescription">Prescription:</label>
-                    {{row[3]}}
-                </div>
-                <div class="form-group">
-                    <label for="lab-tests">Laboratory Tests:</label>
-                    {{row[4]}}
-                </div>
-                <div class="form-group">
-                    <label for="Case forwarded to">Case forwarded to:</label>
-                    {{row[5]}}
-                </div>
-          
+        
+            <div class="form-group">
+                <h1>GENERAL DOC DAIGNOSIS</h1>
+                
+                <label for="name">Name:</label>
+                {{row[6]}}
+            </div>
+            <div class="form-group">
+                <label for="appointment-time">Appointment Time:</label>
+                {{row[1]}}
+            </div>
+            <div class="form-group">
+                <label for="symptoms">Symptoms:</label>
+                {{row[2]}}
+            </div>
+            <div class="form-group">
+                <label for="prescription">Prescription:</label>
+                {{row[3]}}
+            </div>
+            <div class="form-group">
+                <label for="lab-tests">Laboratory Tests:</label>
+                {{row[4]}}
+            </div>
+            <div class="form-group">
+                <label for="Case forwarded to">Case forwarded to:</label>
+                {{row[5]}}
+            </div>
         </div>
         <div class="navbar_maindoc">
-            <form id="patient-form">
+          {% for row in data %}
+            <form method="POST" action="/submit" id="patient-form">
                 <div class="form-group">
                     <h1>MAIN DOC DAIGNOSIS</h1>
                     <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    {{row[5]}}
                 </div>
                 <div class="form-group">
                     <label for="appointment-time">Appointment Time:</label>
-                    <input type="datetime-local" id="appointment-time" name="appointment-time" required>
+                    
                 </div>
                 <div class="form-group">
                     <label for="symptoms">Symptoms:</label>
-                    <textarea id="symptoms" name="symptoms" required></textarea>
+                    <input type="text" id="symptoms" name="symptoms" >
                 </div>
                 <div class="form-group">
                     <label for="prescription">Prescription:</label>
-                    <textarea id="prescription" name="prescription" required></textarea>
+                    <input type="text" id="prescription" name="prescription">
                 </div>
                 <div class="form-group">
                     <label for="lab-tests">Laboratory Tests:</label>
-                    <textarea id="lab-tests" name="lab-tests"></textarea>
+                    <input type="text" id="lab-tests" name="lab-tests">
                 </div>
                 <div class="form-group">
                     <label for="Case forwarded to">Case forwarded to(if applicable):</label>
-                    <textarea id="Case forwarded to" name="Case forwarded to" ></textarea>
+                    <input type="text" id="Case forwarded to" name="Casef" >
                 </div>
+              
+                <input type="submit" value="Submit">
+                </form>
+            {% endfor %}
+                
     </nav>
     {% endfor %}
     </div>
     <div id="respond">
       
         <form action="post_comment.php" method="post" id="commentform">
-      
+          
           <label for="comment" class="required">Your message</label>
-          <textarea name="comment" id="comment" rows="10" tabindex="4"  required="required"></textarea>
+          <textarea name="comment" id="comment" rows="10" tabindex="4"  ></textarea>
       
         </form>
         <div class="bg"></div>
@@ -143,6 +148,7 @@
       <div id="submit-section" class="hide">
         <p id="submit-message">Thanks for your feedback</p>
       </div>
+      
     </div>
     <!-- Script -->
     <script src="static/community_review.js"></script>

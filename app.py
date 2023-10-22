@@ -1,5 +1,5 @@
 
-from flask import Flask, jsonify,render_template
+from flask import Flask, jsonify,render_template,request
 import pymysql
 pymysql.version_info=(1,4,6,'final',0)
 pymysql.install_as_MySQLdb()
@@ -37,6 +37,8 @@ def register3():
     sql="SELECT * FROM doc"
     cursor.execute(sql)
     data=cursor.fetchall()
+    #sql1="INSERT INTO mdoc() VALUES(%s,%s,%s,%s)"
+    #val=()
     return render_template("community_review.html",data=data)
 
 @app.route('/job_for_today.html')
@@ -54,5 +56,20 @@ def xyz2():
 @app.route('/docavailable.html')
 def xyz3():
     return render_template("docavailable.html")
+
+@app.route('/submit',methods=['POST'])
+def submit():
+    if request.method=='POST':
+        symptoms=request.form['symptoms']
+        prescription=request.form['prescription']
+        labt=request.form['lab-tests']
+        casef=request.form['Casef']
+        sql="INSERT INTO mdoc (sym,prescription,labt,casef) VALUES(%s,%s,%s,%s)"
+        val=(symptoms,prescription,labt,casef)
+        cursor.execute(sql,val)
+        connection.commit()
+        return "Data has been inserted into the table quite well!"
+
+
 if __name__ == '__main__':  
     app.run(debug=True,port=8000)
